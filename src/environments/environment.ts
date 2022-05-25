@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   missionheart_api: "http://localhost:3000/api",
-  maintainence: true
+  maintainence: false
 };
 
 /*
