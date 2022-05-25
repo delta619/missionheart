@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { environment } from 'src/environments/environment';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,8 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
   title = 'missionheart';
+  maintainence:Boolean = false
 
   ngOnInit() {
+
+    this.maintainence = environment.maintainence
+
 
     this.loadJsFile("assets/js/jquery.min.js");
     this.loadJsFile("assets/js/jquery-migrate-3.0.1.min.js")

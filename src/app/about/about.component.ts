@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { DbService } from '../db.service';
+import Swal from 'sweetalert2'
+import { NgxSpinnerService } from "ngx-spinner";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-about',

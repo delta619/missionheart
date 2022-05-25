@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { DbService } from '../db.service';
+import Swal from 'sweetalert2'
+import { NgxSpinnerService } from "ngx-spinner";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -7,7 +11,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dbService: DbService, private spinner: NgxSpinnerService, private route:Router) { }
 
   ngOnInit() {
 
@@ -36,4 +40,17 @@ export class RegisterComponent implements OnInit {
     node.type = 'text/javascript';
     document.getElementsByTagName('head')[0].appendChild(node);
   }
+
+  onClickSubmit(form:any){
+    this.spinner.show();
+      this.dbService.addDPatient(form).subscribe(res=>{
+        this.spinner.hide()
+        Swal.fire("Success", "Your Query has successfully reached us.", "success").finally(()=>{
+          window.location.href = "missionheart.com"
+        })
+      })
+  }
+
+
+
 }

@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -10,6 +10,11 @@ import { FaqComponent } from './faq/faq.component';
 import { TestimonialsComponent } from './testimonials/testimonials.component';
 import { RegisterComponent } from './register/register.component';
 import { DonateComponent } from './donate/donate.component';
+import { FormsModule } from '@angular/forms';
+import { DbService } from './db.service'
+import { HttpClientModule } from '@angular/common/http'
+import { NgxSpinnerModule } from "ngx-spinner";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
@@ -25,8 +30,13 @@ import { DonateComponent } from './donate/donate.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    NgxSpinnerModule,
+    BrowserAnimationsModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [DbService],
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }
