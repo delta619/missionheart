@@ -7,13 +7,27 @@ This site is under maintainence
 
 
   <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-    <div class="container">
+    <div class="container" style="flex-direction: column">
       <a class="navbar-brand" href="index">MISSION HEART FOUNDATION</a>
+
+      <div *ngIf="mobNavClicked" class="mobNav">
+
+        <a class="mobNav_item" href="index">Home</a>
+        <a class="mobNav_item" href="about">About</a>
+        <a class="mobNav_item" href="causes">Cause</a>
+        <a class="mobNav_item" href="faq">FAQs</a>
+        <a class="mobNav_item" href="testimonials">Testimonials</a>
+        <a class="mobNav_item" href="register">Register</a>
+        <a class="mobNav_item" href="donate">Donate</a>
+      
+      </div>
       <button class="navbar-toggler" type="button"  (click)="mobNavClicked = !mobNavClicked" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
         <span *ngIf="!mobNavClicked" class="oi oi-menu"></span> 
-        <span *ngIf="mobNavClicked" class="oi oi-x"></span>
+        <span *ngIf="mobNavClicked" class="oi oi-x"></span> 
+
 
       </button>
+
       
       <div class="collapse navbar-collapse" id="ftco-nav">
         <ul class="navbar-nav ml-auto">
@@ -25,6 +39,7 @@ This site is under maintainence
           <li class="nav-item"><a href="register" class="nav-link">Register</a></li>
           <li class="nav-item"><a href="donate" class="nav-link">Donate</a></li>
         </ul>
+        
       </div>
     </div>
   </nav>
@@ -32,18 +47,7 @@ This site is under maintainence
 
 <!-- Navigation up -->
 
-<div *ngIf="mobNavClicked" class="mobNav">
 
-  <a class="mobNav_item" href="index">Home</a>
-  <a class="mobNav_item" href="about">About</a>
-  <a class="mobNav_item" href="causes">Cause</a>
-  <a class="mobNav_item" href="faq">FAQs</a>
-  <a class="mobNav_item" href="testimonials">Testimonials</a>
-  <a class="mobNav_item" href="register">Register</a>
-  <a class="mobNav_item" href="donate">Donate</a>
-
-  
-</div>
 
 
 <router-outlet></router-outlet>
