@@ -4,22 +4,26 @@ This site is under maintainence
 
 <div *ngIf="!maintainence">
 
+
+
   <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
     <div class="container">
-      <a class="navbar-brand" routerLink="index">MISSION HEART FOUNDATION</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="oi oi-menu"></span> 
+      <a class="navbar-brand" href="index">MISSION HEART FOUNDATION</a>
+      <button class="navbar-toggler" type="button"  (click)="mobNavClicked = !mobNavClicked" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span *ngIf="!mobNavClicked" class="oi oi-menu"></span> 
+        <span *ngIf="mobNavClicked" class="oi oi-x"></span>
+
       </button>
       
       <div class="collapse navbar-collapse" id="ftco-nav">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item"><a routerLink="index" class="nav-link">Home</a></li>
-          <li class="nav-item"><a routerLink="about" class="nav-link">About</a></li>
-          <li class="nav-item"><a routerLink="causes" class="nav-link">Cause</a></li>
-          <li class="nav-item"><a routerLink="faq" class="nav-link">FAQs</a></li>
-          <li class="nav-item"><a routerLink="testimonials" class="nav-link">Testimonials</a></li>
-          <li class="nav-item"><a routerLink="register" class="nav-link">Register</a></li>
-          <li class="nav-item"><a routerLink="donate" class="nav-link">Donate</a></li>
+          <li class="nav-item"><a href="index" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="about" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="causes" class="nav-link">Cause</a></li>
+          <li class="nav-item"><a href="faq" class="nav-link">FAQs</a></li>
+          <li class="nav-item"><a href="testimonials" class="nav-link">Testimonials</a></li>
+          <li class="nav-item"><a href="register" class="nav-link">Register</a></li>
+          <li class="nav-item"><a href="donate" class="nav-link">Donate</a></li>
         </ul>
       </div>
     </div>
@@ -28,6 +32,18 @@ This site is under maintainence
 
 <!-- Navigation up -->
 
+<div *ngIf="mobNavClicked" class="mobNav">
+
+  <a class="mobNav_item" href="index">Home</a>
+  <a class="mobNav_item" href="about">About</a>
+  <a class="mobNav_item" href="causes">Cause</a>
+  <a class="mobNav_item" href="faq">FAQs</a>
+  <a class="mobNav_item" href="testimonials">Testimonials</a>
+  <a class="mobNav_item" href="register">Register</a>
+  <a class="mobNav_item" href="donate">Donate</a>
+
+  
+</div>
 
 
 <router-outlet></router-outlet>
@@ -53,13 +69,13 @@ This site is under maintainence
           <div class="block-21 mb-4 d-flex">
             <a class="blog-img mr-4" style="background-image: url(../assets/images/image_1.jpg);"></a>
             <div class="text">
-              <h3 class="heading"><a routerLink="faq">What is CHD?</a></h3>
+              <h3 class="heading"><a href="faq">What is CHD?</a></h3>
             </div>
           </div>
           <div class="block-21 mb-4 d-flex">
             <a class="blog-img mr-4" style="background-image: url(../assets/images/image_2.jpg);"></a>
             <div class="text">
-              <h3 class="heading"><a routerLink="faq">What is the incidence of CHD in India?</a></h3>
+              <h3 class="heading"><a href="faq">What is the incidence of CHD in India?</a></h3>
             </div>
           </div>
         </div>

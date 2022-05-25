@@ -45,9 +45,15 @@ export class RegisterComponent implements OnInit {
     this.spinner.show();
       this.dbService.addDPatient(form).subscribe(res=>{
         this.spinner.hide()
-        Swal.fire("Success", "Your Query has successfully reached us.", "success").finally(()=>{
+        Swal.fire("Success", "The details has successfully reached us.", "success").finally(()=>{
           window.location.href = "missionheart.com"
         })
+      }, err=>{
+        Swal.fire("Ah!", "Something went wrong. Please try again in some time.", "error").finally(()=>{
+          window.location.href = "missionheart.com"
+        })
+        this.spinner.hide()
+
       })
   }
 

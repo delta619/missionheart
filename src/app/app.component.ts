@@ -9,6 +9,8 @@ export class AppComponent implements OnInit {
   title = 'missionheart';
   maintainence:Boolean = false
 
+  mobNavClicked:Boolean =false
+
   ngOnInit() {
 
     this.maintainence = environment.maintainence
